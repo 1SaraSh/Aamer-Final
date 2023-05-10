@@ -70,7 +70,7 @@ exports.FormExpert_post = async (req, res) => {
     return res.status(200).redirect("/ProfileExpertView");
   } catch (error) {
     console.log(error);
-    res.status(500).send("Internal Server Error");
+    res.status(500).send("Internal Server Error Expert");
   }
 };
 

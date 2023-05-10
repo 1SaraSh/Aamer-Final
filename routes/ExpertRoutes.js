@@ -24,42 +24,7 @@ router.get("/deleteExpert", ExpertController.deleteExpert);
 router.get("/ProfileExpert/:id", SeekerController.ProfileExpert);
 
 
-// router.get("/Experts", (req, res) => {
-//   Expert.find()
-//     .then((result) => {
-//       res.render("SeekerSearch", { title: "All Experts", Expert: result });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).send("Internal Server Error");
-//     });
-// });
 
-// router.get("/ProfileExpert", (req, res) => {
-//   res.render("ProfileExpert", { expert: {}, title: "Expert Information" });
-// });
-
-// router.get("/allExperts", (req, res) => {
-//   Expert.find()
-//     .then((result) => {
-//       res.send(result);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).send("Internal Server Error");
-//     });
-// });
-
-// router.get("/single-Expert", (req, res) => {
-//   Expert.findById("645666c8fdd2c26d48cca5ac")
-//     .then((result) => {
-//       res.send(result);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).send("Internal Server Error");
-//     });
-// });
 
 
 router.get("/AboutExpert", (req, res) => {
@@ -212,16 +177,4 @@ module.exports = router;
 
 //   });
 
-// // -------------------------------Profile View------------------------------------------
 
-// router.get('/ProfileExpertView',(req,res) =>{
-//     // res.send('<p>hi</p>');
-//     res.render('ProfileExpertView',{title: 'ProfileExpertView'});
-
-//   });
-//   router.get('/ProfileExpertView',(req,res) =>{
-//     // res.send('<p>about</p>');
-//     res.render('ProfileExpertView',{title: 'ProfileExpertView'});
-//   });
-
-//   module.exports = router;
