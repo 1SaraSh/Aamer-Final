@@ -61,6 +61,9 @@ app.use((req, res, next) => {
 app.get("/", (req, res) => {
   res.render('Homepage');
 });
+app.get("/adminView", (req, res) => {
+  res.render('adminView');
+});
 
 // Dashboard Page
 // app.get('/EditSeekerProfile', (request, response) => {

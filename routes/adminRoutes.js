@@ -4,6 +4,7 @@ const adminController = require("../controllers/adminController");
 
 router.get("/", adminController.index);
 
+
 router.get("/deleteSeeker/:id", adminController.deleteSeeker);
 router.get("/deleteExpert/:id", adminController.deleteExpert);
 
