@@ -10,8 +10,8 @@ const upload = require('../uploadImages')
 router.get("/FormExpert", ExpertController.FormExpert);
 router.post("/FormExpert", upload.single('Picture'), ExpertController.FormExpert_post);
 
-router.get("/LogInExpert", ExpertController.loginExperts);
-router.post("/LogInExpert", ExpertController.loginExperts_post);
+
+
 router.get("/LoginExpert", ExpertController.loginExperts);
 router.post("/LoginExpert", ExpertController.loginExperts_post);
 
@@ -87,6 +87,9 @@ module.exports = router;
 //         console.log(error);
 //       });
 //   });
+
+// router.get("/LogInExpert", ExpertController.loginExperts);
+// router.post("/LogInExpert", ExpertController.loginExperts_post);
 
 //   //Display All Experts
 //   router.get('/allExperts',(req,res)=>{
