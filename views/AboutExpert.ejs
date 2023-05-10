@@ -1,0 +1,64 @@
+<head>
+<%- include('./partials/Head.ejs') %>
+<%- include('./partials/HeadD.ejs') %>
+<%- include('./partials/nav.ejs') %>
+<link rel="stylesheet" type="text/css" href="/css/Profile.css" />
+
+</head>
+
+
+<body id="About">
+    <section class="about-section" >
+      <div class="container" style="padding-bottom: 150px; padding-left: 50px; margin-left: 0; margin-top: 100px;">
+        <div class="row" >
+          <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+            <div class="inner-column">
+              <div class="sec-title">
+                <span class="title">Aamer Expert</span>
+                <h2>What is an Expert?</h2>
+              </div>
+              <div class="text">
+                An expert is a professional who has the knowledge and expertise
+                to provide consultation in their respective field. Who is also
+                willing to provide consultation services to help-seekers who
+                need advice and guidance in that field. These experts could be
+                individuals who work independently or as part of a larger
+                organization, such as a law firm or medical practice, and would
+                be registered on the website as consultants.
+              </div>
+              <div class="btn-box">
+                <button class="theme-btn btn-style-one" id="signup-btn">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Column -->
+          <div class="image-column col-lg-6 col-md-12 col-sm-12">
+            <div class="inner-column wow fadeInLeft">
+              <figure class="image-1">
+                <img src="/img/ExpertPage.jpg" alt="" style="max-width: 100%; height: auto;"/>
+              </figure>
+              <!-- <figure class="image-2">
+                  <img src="images/ExpertPage2.jpeg" alt="">
+              </figure> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const signupBtn = document.getElementById("signup-btn");
+
+      signupBtn.addEventListener("click", () => {
+        window.location.href = "/FormExpert";
+      });
+    </script>
+    <%- include('./partials/Footer.ejs') %>
+  </body>
+
+
+
+

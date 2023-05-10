@@ -1,0 +1,198 @@
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: sans-serif;
+  background-image: url("https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=100");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.8)!important ; /* 80% opacity white background */
+
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+.btn-google {
+  color: white !important;
+  background-color: #de5246 !important;
+}
+
+.btn-apple {
+  color: white !important;
+  background-color: #a3aaae !important;
+}
+
+.text-underline-hover {
+  text-decoration: none;
+}
+
+.text-underline-hover:hover {
+  text-decoration: underline;
+}
+
+a:not([class]) {
+  text-decoration: none;
+}
+
+a:not([class]):hover {
+  text-decoration: underline;
+}
+
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+/*New Cards*/
+
+
+h3 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  padding-top: 10px;
+}
+a {
+  text-decoration: none;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+
+/* ---Subscription CSS--- */
+#Subscription * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+#Subscription {
+  width: 100%;
+  height: auto;
+}
+
+#Subscription .pricing {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 2rem;
+}
+
+#Subscription .card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: auto;
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25),
+    0 5px 5px rgba(0, 0, 0, 0.22);
+  padding: 2rem;
+  margin: 1rem;
+  transition: all 0.2s ease-in;
+}
+
+#Subscription .card-wrapper:hover {
+  transform: scale(1.1);
+}
+
+#Subscription .card-header {
+  margin: 1rem;
+  text-align: center;
+}
+
+#Subscription .card-wrapper:hover .card-header > h2 {
+  transform: scale(1.1);
+  color: #5222d0;
+  letter-spacing: 2;
+}
+
+#Subscription .card-header > img {
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+#Subscription .card-detail {
+  width: 100%;
+}
+
+#Subscription .card-detail > p {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #d5d5d5;
+}
+
+#Subscription .check {
+  font-family: "Font Awesome 5 Free" !important;
+  color: #5222d0;
+}
+
+#Subscription .nocheck {
+  font-family: "Font Awesome 5 Free" !important;
+  color: #ec615b;
+}
+
+#Subscription .card-detail > p:hover {
+  background-color: #d5d5d5;
+}
+
+#Subscription .card-price {
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem;
+}
+
+#Subscription .card-price > p {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+#Subscription .card-price > p > sup,
+.card-price > p > sub {
+  font-size: 1rem;
+}
+
+#Subscription .card-button {
+  padding: 0.1rem 2rem;
+  border: 2px solid #dfdedc;
+  background-color: #dfdedc;
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 50ms ease-in;
+}
+
+#Subscription .card-button:hover {
+  border: 2px solid #5222d0;
+  background-color: transparent;
+  font-weight: 800;
+}
+
+#Subscription h2 {
+  margin-top: 10px;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+#Subscription small {
+  padding-top: 7.5px;
+  font-size: 11px;
+}
+

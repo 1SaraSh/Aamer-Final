@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="/css/JoinUsCSS.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto mt-5">
+          <div class="card border-0 shadow rounded-3 my-5 mx-auto" style="width: 450px">
+            <div class="card-body p-4 p-sm-5">
+              <h3 class="text-center mb-5">Join Aamer!</h3>
+              <form action="/SignUp" method="POST" onsubmit="return validateFormEmail()">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" />
+                  <label for="floatingInput">Email address</label>
+                  <span id="emailError" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInputUser" name="fullName" placeholder="Full Name" />
+                  <label for="floatingInputUser">Full Name</label>
+                  <span id="usernameError" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" />
+                  <label for="floatingPassword">Enter Password</label>
+                  <span id="passwordError" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingReenterPassword" name="reenterPassword" placeholder="Reenter Password" />
+                  <label for="floatingReenterPassword">Reenter Password</label>
+                  <span id="reenterPasswordError" class="text-danger"></span>
+                </div>
+
+                <span id="emptyError" class="text-danger"></span>
+                <div class="d-grid">
+                  <br /><button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign Up</button>
+                </div>
+                <hr class="my-4" />
+                <div class="d-grid mb-2">
+                  <button class="btn btn-google btn-login text-uppercase fw-bold" type="button">
+                    <i class="fab fa-google me-2"></i> Sign in with Google
+                  </button>
+                </div>
+                <div class="d-grid">
+                  <button class="btn btn-apple btn-login text-uppercase fw-bold" type="button">
+                    <i class="fab fa-apple-f me-2"></i> Sign in with Apple
+                  </button>
+                </div>
+
+                <div class="form-check mb-3 pt-2t text-center">
+                  Already a member?<a href="/LogIn" class="text-underline-hover">Log In</a><br /><a href="/AboutExpert" class="text-underline-hover link-success">Become An Expert</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function validateFormEmail() {
+        var username = document.getElementById("floatingInputUser").value;
+        var password = document.getElementById("floatingPassword").value;
+        var reenterPassword = document.getElementById("floatingReenterPassword").value;
+        var empty = document.getElementById("emptyError").textContent;
+        var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/; // Password regex
+        var lettersRegex = /^[a-zA-Z\s]+$/; //letters and spaces
+        var email = document.getElementById("floatingInput").value;
+        var at = document.getElementById("floatingInput").value.indexOf("@");
+        var submitOK = true;
+
+        // If empty
+        if (username == "" || password == "" || reenterPassword == "" || email == "") {
+          document.getElementById("emptyError").textContent = "All fields above are required.";
+          submitOK = false; // Prevent the form submission
+        } else {
+          document.getElementById("emptyError").textContent = "";
+        }
+
+        // Username error
+        if (username.length > 50 && username != "") {
+          document.getElementById("usernameError").textContent = "Name should be between 1-50 characters";
+          submitOK = false;
+          if (!lettersRegex.test(username)) {
+            document.getElementById("usernameError").textContent = "Name should contain only letters";
+            submitOK = false;
+          }
+        } else if (!lettersRegex.test(username) && username != "") {
+          document.getElementById("usernameError").textContent = "Name should contain only letters";
+          submitOK = false;
+        } else {
+          document.getElementById("usernameError").textContent = "";
+        }
+
+        // Password error
+        if (!passwordRegex.test(password) && password != "") {
+          document.getElementById("passwordError").textContent = "Password must include at least one uppercase letter, one lowercase letter, one number, and be at least 6 characters long.";
+          submitOK = false;
+        } else {
+          document.getElementById("passwordError").textContent = "";
+        }
+
+        // Reenter Password error
+        if (password != reenterPassword && reenterPassword != "") {
+          document.getElementById("reenterPasswordError").textContent = "Passwords do not match.";
+          submitOK = false;
+        } else {
+          document.getElementById("reenterPasswordError").textContent = "";
+        }
+
+        return submitOK;
+      }
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,149 @@
+<%- include('./partials/Head.ejs') %>
+<link rel="stylesheet" type="text/css" href="/css/Profile.css" />
+
+<body>
+  <script>
+    function updateContentLayout() {
+      var screenWidth = window.innerWidth;
+      var contentWidth = document.querySelector(".content").offsetWidth;
+      var contentPadding = (screenWidth - contentWidth) / 2;
+      document.querySelector(".content").style.paddingLeft =
+        contentPadding + "px";
+      document.querySelector(".content").style.paddingRight =
+        contentPadding + "px";
+    }
+
+    window.addEventListener("resize", updateContentLayout);
+  </script>
+  <%- include('./partials/Header.ejs') %>
+
+  <!-- scrolling BG images -->
+  <div>
+    <div class="container">
+      <div class="wrapper">
+        <img src="/img/home5.jpg" class="imgBG" />
+        <img src="/img/home4.jpg" class="imgBG" />
+        <img src="/img/home1.jpg" class="imgBG" />
+        <img src="/img/home2.jpg" class="imgBG" />
+      </div>
+    </div>
+    <div></div>
+    <div class="center test">
+      <img src="/img/Aamer.png" class="imgLogoMain" style="margin-top: -60px;"/>
+      <h1 class="middleHeader" style="padding-top: 100px">
+        How can we help you today?
+      </h1>
+
+      <!-- <div class="searchContainer">
+        <form class="search" action="">
+            <input style="margin-top: 5px;" type="search" placeholder="Enter Keyword Here... " required>
+            <button type="submit">Search</button>
+        </form>
+    </div> -->
+
+      <div>
+        <p class="popSearch2" style="color: white; position: inherit">
+          Popular Searches:
+        </p>
+        <button type="submit" class="popSearch">
+          <a
+            href="/SeekerSearch/Mechanics"
+            style="text-decoration-line: none; color: #fff"
+            >Plumbing</a
+          >
+        </button>
+        <button type="submit" class="popSearch">
+          <a
+            href="/SeekerSearch/Tech"
+            style="text-decoration-line: none; color: #fff"
+            >Iphones</a
+          >
+        </button>
+        <button type="submit" class="popSearch">
+          <a
+            href="/SeekerSearch/Fashion"
+            style="text-decoration-line: none; color: #fff"
+            >Styling</a
+          >
+        </button>
+      </div>
+    </div>
+  </div>
+  <style>
+    /* Default style for the search bar */
+    .searchContainer {
+      display: none;
+    }
+
+    /* Media query for laptops and larger screens */
+    @media (min-width: 1024px) {
+      .searchContainer {
+        display: block;
+      }
+    }
+  </style>
+
+  <!-- We offer consultations on -->
+  <br />
+  <h2 style="margin-top: 100px; margin-left: 150px; color: #44bce2;">WE OFFER CONSULTATIONS ON</h2>
+
+  <!-- <div class="textBox">
+    <h3>We offer consultations on</h3>
+  </div> -->
+
+  <div class="caro">
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" checked />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <main id="carousel">
+      <div class="item" >
+        <img src="/img/techCaro.jpg" class="imimgCarogBG" />
+        <p style="color: #44bce2; font-weight: bold;">TECHNOLOGY</p>
+      </div>
+      <div class="item">
+        <img src="/img/fashionCaro.jpg" class="imgCaro" />
+        <p style="color: #44bce2; font-weight: bold;">FASHION</p>
+      </div>
+      <div class="item">
+        <img src="/img/mechanicsCaro.jpg" class="imgCaro" />
+        <p style="color: #44bce2; font-weight: bold;">MECHANICS</p>
+      </div>
+      <div class="item">
+        <img src="/img/fitnessCaro.jpg" class="imgCaro" />
+        <p style="color: #44bce2; font-weight: bold;">FITNESS</p>
+      </div>
+      <div class="item">
+        <img src="/img/moreCaro.jpg" class="imgCaro" />
+        <p style="color: #44bce2; font-weight: bold;">AND MORE...</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- who are we -->
+
+  <div class="paraMiddle" id="about">
+    <h2 style="margin-top: 150px; color: #44bce2;">WHO ARE WE</h2>
+    <p style="text-align-last: left; margin-bottom: 1px; text-indent: 25px">
+      <img src="/img/Logo.png" class="imgLogo1" />
+      Looking for expert guidance and support to overcome everyday challenges?
+      Look no further than Aamer! Our team of experienced consultants
+      specializes in providing practical solutions to a wide range of problems,
+      from personal finance and career development to relationships, health and
+      wellness, and more.
+    </p>
+    <br />
+    <p style="margin-top: 1px; margin-bottom: 200px; text-indent: 25px">
+      At Aamer, we believe that everyone deserves access to quality advice and
+      support, no matter their background or circumstances. That's why we offer
+      personalized consultations that are tailored to meet the unique needs of
+      each client. Whether you're an individual looking to improve your personal
+      and professional life, a family seeking to overcome difficult challenges,
+      or a business looking to boost performance, our team has the expertise and
+      resources to help.
+    </p>
+  </div>
+
+  <%- include('./partials/Footer.ejs') %>
+</body>

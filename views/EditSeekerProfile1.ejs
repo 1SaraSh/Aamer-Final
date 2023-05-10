@@ -1,0 +1,110 @@
+<%- include('./partials/Head.ejs') %>
+<%- include('./partials/HeadD.ejs') %>
+<link rel="stylesheet" type="text/css" href="/css/Profile.css" />
+
+  <body id="EditProfile">
+    <%- include('./partials/nav.ejs') %>
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container">
+        <div class="section-title">
+        </div>
+        <section id="team" class="team section-bg">
+            <div class="container">
+              <div class="section-title">
+                <h2 style="text-align:center;">You're Now a Seeker!</h2>
+              </div>
+                    
+        <div class="row justify-content-md-center">
+            <div class="col-lg-6" style="background-color:#f5f5f5 ; padding: 70px; padding-left: 70px;padding-right: 20px;">
+                <div class="member flex  align-items-start">
+              <div class="teampic">
+                <!-- should be dynamic -->
+                <img src="/img/Account.jpg" class="img-fluid fixed-size  rounded-circle" alt="" />
+              </div>
+              <style>
+                .fixed-size {
+                margin-left: 20px;
+                margin-bottom: 30px;
+                width:158px;
+                height: 158px;
+                }
+                </style>
+                <form action="/EditSeekerProfile" method="POST">
+                    <div class="form-group" style="width: 250px; margin-top: 30px;">
+                      <h6>Full Name</h6>
+                      <div class="form-group" style="width: 250px; margin-top: 10px;">
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="fullName"
+                        name="fullName"
+                        style="padding: 19px;"
+                        value="<%= user.fullName %>"
+                        required
+                      /> <span id="firstNameError" class="text-danger"></span>
+                    </div>
+                    <br>
+                      <h6>Email</h6>
+                      <div class="form-group" style="width: 250px; margin-top: 10px;">
+                        <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        style="padding: 19px;"
+                        value="<%= user.email %>"
+                        required
+                      /> <span id="EmailError" class="text-danger"></span>
+                    </div>
+                  
+                    <br>            
+                     <!-- <h6>Profile Picture Attachement</h6> -->
+                     <!-- <div class="form-group" style="width: 400px; margin-top: 10px;">
+                         <input
+                         type="file"
+                         class="form-control"
+                         id="Picture"
+                         name="Picture"
+                         style="height: 37px;"
+                       />
+                     </div> -->
+                     <br><span id="submitError" class="text-danger"></span>
+                     <br><br>
+                     <div >
+                     <button class="btn card-button" style="margin-bottom: 80px;" onclick="return validateForm()">Update</button>
+                    </div>
+                  </form>
+                    <div >
+                      <a href='/deleteSeeker' class="btn card-button" style="margin-bottom: 80px;"> Delete</a>
+                      <!-- <button class="btn card-button" onclick="window.location.href='/deleteSeeker'" style="margin-top: 300px;">Delete</button> -->
+                     </div>
+                     <div >
+                       <!-- <a class="btn card-button" style="margin-bottom: 80px;" onclick="window.location.href='/logout'">Logout</button> -->
+                       <a href="/logout" class="btn card-button" >Logout</a>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+<!-- End Testimonials -->
+      </div>
+    </section>
+    <!-- End Team Section -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    >
+      const textarea = document.getElementById("infoTextarea");
+      textarea.addEventListener("keyup", e =>{
+        textarea.style.height = "63px";
+        let scHeight = e.target.scrollHeight;
+        textarea.style.height = `${scHeight}px`;
+      });
+</script>
+  </body>

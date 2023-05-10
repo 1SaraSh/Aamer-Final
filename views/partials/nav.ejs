@@ -1,0 +1,39 @@
+<!-- top nav -->
+
+<div class="topnav" style="background-color: black">
+  <a class="active" href="/">Home</a>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="myFunction()">
+      Categories
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="/SeekerSearch/Tech">Technology</a>
+      <a href="/SeekerSearch/Fashion">Fashion</a>
+      <a href="/SeekerSearch/Mechanics">Mechanics</a>
+      <a href="/SeekerSearch/Fitness">Fitness</a>
+    </div>
+  </div>
+  <a href="/#about">About us</a>
+  <a href="/AboutExpert">Become an expert</a>
+
+  <div class="signin">
+  <% if(isAuth){ %>
+
+       <% if(role == 'seeker'){ %>
+        <a href="/EditSeekerProfile" style="padding: 16px;">Profile</a>
+      
+      <% } else if (role == 'admin') { %>
+        <a href="/admin">Control Panel</a>
+
+        <% } else { %>
+        <a href="/ProfileExpertView" style="padding: 16px;">Profile</a>
+          <% } %>
+  
+  <% } else {%>
+    <a href="/SignUp" class="" style="padding: 16px;">Signup</a>
+    <% } %>
+
+  </div>
+</div>

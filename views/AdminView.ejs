@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/css/Admin.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icon Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Admin Page</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="admin">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-8">
+            <div class="page-header">
+              <div style="margin: 100px"></div>
+              <button id="switchBtn">Switch to Seeker Profiles</button>
+              <div style="margin: 50px"></div>
+              <div id="expertProfiles">
+                <h2>Experts</h2>
+                <div class="profile">
+                  <table class="table">
+                    <tr>
+                      <th>Full Name</th>
+                      <th>Phone_Number</th>
+                      <th>Email</th>
+                      <th>Specialization</th>
+                      <th>Rating</th>
+                      <th></th>
+                    </tr>
+                    <% experts.forEach(expert => { %>
+
+                    <tr>
+                      <!-- Should be dynamic  -->
+                       
+                      <td><%= expert.First_Name %> <%= expert.Last_Name %></td>
+                      <td><%= expert.Phone_Number %></td>
+                      <td><%= expert.Email %></td>
+                      <td><%= expert.Specialization %></td>
+                      <form action="/admin/updateExpert" method="post">
+
+                      <td> 
+                        <select id="Rating" name="Rating">
+                          <option value="1" <%= expert.Rating == 1 ? 'selected': '' %>>1</option>
+                          <option value="2" <%= expert.Rating == 2 ? 'selected': '' %>>2</option>
+                          <option value="3" <%= expert.Rating == 3 ? 'selected': '' %>>3</option>
+                          <option value="4" <%= expert.Rating == 4 ? 'selected': '' %>>4</option>
+                          <option value="5" <%= expert.Rating == 5 ? 'selected': '' %>>5</option>
+                        </select>
+                       </td>
+
+                      <td>
+                          <input type="hidden" name="id" value="<%= expert._id %>">
+                        <button id="edit" class="btn btn-warning btn-xs">
+                          Update
+                        </button>
+                      </form>
+                        <button id="delete" class="btn btn-danger btn-xs" onclick="window.location.href='/admin/deleteExpert/<%= expert._id %>'">
+                          Delete
+                        </button>
+                      </td>
+
+                    </tr>
+                    <% }) %>
+
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div id="seekerProfiles" style="display: none">
+              <h2>Seekers</h2>
+              <div class="profile">
+                <table class="table">
+                  <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                  </tr>
+                  <% seekers.forEach(seeker => { %>
+                  <tr>
+                    <!-- Should be dynamic  -->
+                    <td><%= seeker.fullName %></td>
+                    <td><%= seeker.email %></td>
+                    <td>
+                      
+                      <button id="delete" class="btn btn-danger btn-xs" onclick="window.location.href='/admin/deleteSeeker/<%= seeker._id %>'">
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                  <% }) %>
+                </table>
+              </div>
+            </div>
+            <!-- <button class="btn btn-default add">Experts</button> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Switch button -->
+    <script>
+      const switchBtn = document.getElementById("switchBtn");
+      const expertProfiles = document.getElementById("expertProfiles");
+      const seekerProfiles = document.getElementById("seekerProfiles");
+
+      switchBtn.addEventListener("click", () => {
+        if (expertProfiles.style.display === "block") {
+          expertProfiles.style.display = "none";
+          seekerProfiles.style.display = "block";
+          switchBtn.textContent = "Switch to Expert Profiles";
+        } else {
+          expertProfiles.style.display = "block";
+          seekerProfiles.style.display = "none";
+          switchBtn.textContent = "Switch to Seeker Profiles";
+        }
+      });
+    </script>
+    <!-- for hover effects -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

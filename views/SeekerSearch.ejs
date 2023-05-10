@@ -1,0 +1,59 @@
+<%- include('./partials/Head.ejs') %>
+<link rel="stylesheet" type="text/css" href="/css/Profile.css" />
+
+<body>  
+    
+<script>
+    function updateContentLayout() {
+  var screenWidth = window.innerWidth;
+  var contentWidth = document.querySelector('.content').offsetWidth;
+  var contentPadding = (screenWidth - contentWidth) / 2;
+  document.querySelector('.content').style.paddingLeft = contentPadding + 'px';
+  document.querySelector('.content').style.paddingRight = contentPadding + 'px';
+}
+
+window.addEventListener('resize', updateContentLayout);
+    </script>
+    
+<!-- top nav -->
+<%- include('./partials/Header.ejs', {title: title}) %>
+
+
+    
+<!-- USERS? -->
+<% if(Expert.length > 0) { %>
+  <% Expert.forEach(Expert => { %>
+    <div class="containerUserSearch">
+      <div class="card">
+        <img class="pfpImg" src="/uploads/<%= Expert.Picture %>" alt="User Image">
+        <div>
+          <h2 style="font-weight: 700; margin-bottom: 5px; font-size: 20px; color: #22c6f0;"><%= Expert.First_Name %> <%= Expert.Last_Name %></h2>
+          <span id="span1"><%= Expert.Credentials %></span>
+          
+          <div id="rating">
+            <% for(let i = 0; i < Expert.Rating; i++) { %>
+              <span class="fa fa-star checked"></span>
+            <% } %>
+            <% for(let i = 0; i < (5-Expert.Rating); i++) { %>
+              <span class="fa fa-star "></span>
+            <% } %>
+          </div>
+          <p style="margin: 10px 0 0 0; font-size: 14px; line-height: 1.5;font-family: var(--bs-font-sans-serif);color: #212529;"><%= Expert.infoTextarea %></p>
+          <a href="/ProfileExpert/<%= Expert._id %>">View Profile</a>
+
+        </div>
+      </div>
+    </div>
+  <% }); %>
+<% } %>
+
+
+    <%- include('./partials/Footer.ejs') %>
+
+    
+<!-- footer -->
+    
+    
+</body>
+    
+</html>
