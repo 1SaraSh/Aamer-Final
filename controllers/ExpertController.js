@@ -43,7 +43,7 @@ exports.FormExpert_post = async (req, res) => {
       .send(
         `<script>alert('${errorMessage}'); window.location.href = '/FormExpert';</script>`
       );
-  }
+  } 
   try {
     const hashedPassword = await bcrypt.hash(password, 12);
     // Create a new expert

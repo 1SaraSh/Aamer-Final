@@ -154,27 +154,6 @@ module.exports = router;
 //           Picture
 //         });
 
-//         // Save the new seeker to the database
-//         newExpert.save()
-//           .then(() => {
-//             // Successful seeker creation
-//             const successMessage = 'Expert registration successful';
-//             return res.status(200).send(`<script>alert('${successMessage}'); window.location.href = '/';</script>`);
-//           })
-//           .catch((err) => {
-//             // Error while saving the new seeker
-//             res.status(500).json({ message: 'Internal server error' });
-//           });
-//       })
-//       .catch((err) => {
-//         // Error while querying the database
-//         res.status(500).json({ message: 'Internal server error' });
-//       });
-//   });
-//   router.get('/FormExpert',(req,res) =>{
-//     // res.send('<p>hi</p>');
-//     res.render('FormExpert',{title: 'FormExpert'});
 
-//   });
 
 

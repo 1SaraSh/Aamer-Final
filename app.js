@@ -25,7 +25,6 @@ const app = express();
 // register view engine
 app.set("view engine", "ejs");
 require('dotenv').config();
-// const port = 27017;
 const port = 5000 || process.env.PORT;
 
 // middleware
